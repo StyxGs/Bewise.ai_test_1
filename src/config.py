@@ -2,7 +2,11 @@ import os
 
 from dotenv import load_dotenv
 
-load_dotenv()
+dotenv_path = os.path.join(os.path.dirname(__file__), '../test.env')
+load_dotenv(dotenv_path=dotenv_path)
+
+dotenv_path_test = os.path.join(os.path.dirname(__file__), '../.env')
+load_dotenv(dotenv_path=dotenv_path_test)
 
 DB_USER: str = os.environ.get('DB_USER')
 DB_PASS: str = os.environ.get('DB_PASS')

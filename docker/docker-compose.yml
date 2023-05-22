@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    container_name: question_db
+    env_file:
+      - ../.env
+    ports:
+      - "6000:5432"
+    volumes:
+      - db_data_task_1:/var/lib/postgresql/data
+
+volumes:
+  db_data_task_1:
